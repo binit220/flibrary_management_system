@@ -11,6 +11,16 @@
   </head>
 
   <body>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Library Management System</a>
+    </div>
+  </nav>
+
+  <div class="container">
     <%= yield %>
-  </body>
-</html>
+  </div>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </body>
+  </html>

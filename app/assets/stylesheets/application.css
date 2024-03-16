@@ -13,3 +13,68 @@
  *= require_tree .
  *= require_self
  */
+
+
+ /* app/assets/stylesheets/application.css */
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+/* Header Styles */
+.header {
+  background-color: #343a40;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table th, table td {
+  padding: 10px;
+  border: 1px solid #dee2e6;
+}
+
+table th {
+  background-color: #343a40;
+  color: #fff;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border-color: #c3e6cb;
+}
