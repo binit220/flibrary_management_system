@@ -15,6 +15,7 @@
 		<th>Genr</th>
 		<th>ISBN</th>
 		<th>Availability</th>
+		<th>item_count</th>
 	</tr>
 
 	<% @books.each do |book| %>
@@ -24,8 +25,9 @@
 		<td><%= book.genr %></td>
 		<td><%= book.isbn %></td>
 		<td><%= book.availability ? 'Available' : 'Not Available' %></td>
+		<td><%= book.item_count%></td>
 		</tr>
 	<% end %>
 </table>
 
-<button> Add Book </button>
+<%= link_to "Add New Book", new_book_path %>

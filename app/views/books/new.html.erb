@@ -1,0 +1,8 @@
+<h2>Add new book</h2>
+
+<%= form_with model: @book do |form| %>
+	<div>
+		<%= form.label :name %><br>
+		<%= form.text_field :name %>
+	</div>
+<%end%>

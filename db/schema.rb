@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_15_131656) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_16_203333) do
   create_table "book_issues", force: :cascade do |t|
     t.integer "book_id", null: false
     t.integer "member_id", null: false
@@ -30,6 +30,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_15_131656) do
     t.boolean "availability"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "item_count"
   end
 
   create_table "members", force: :cascade do |t|
