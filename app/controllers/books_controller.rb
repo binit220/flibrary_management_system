@@ -1,22 +1,23 @@
 class BooksController < ApplicationController
+  skip_forgery_protection
   def index
     @books = Book.all
   end
 
   def show
-    @books = Book.find(params[:id])
+    # books = Book.find(params[:id])
   end
 
   def new
-    @books = Book.new
+    @book = Book.new()
   end
 
   def create
-    @books = Book.new(book_params)
-    if @book.save
-      redirect_to @book
+    @book = Book.create(book_params)
+    if @book.save!
+      redirect_to books_path
     else
-      render 'new'
+      render new
     end
   end
 
@@ -27,22 +28,22 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
-      redirect_to @book
+      redirect_to books_path
     else
       render 'edit'
     end
   end
 
   def destroy
-    @book = Book.find(params[:id])
-    @book.destroy
+    book = Book.find(params[:id])
+    book.destroy
     redirect_to books_path
   end
 
   private
 
   def book_params
-    params.require(:book).permit(:title, :author, :genre, :isbn, :availability)
+    params.require(:book).permit(:name, :author, :genr, :isbn, :availability, :item_count)
   end
 
 end
