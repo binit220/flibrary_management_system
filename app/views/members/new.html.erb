@@ -1,0 +1,22 @@
+<h2>Add new Member</h2>
+
+<%= form_with model: @member do |form| %>
+	<div>
+		<%= form.label :Name %><br>
+		<%= form.text_field :name %>
+	</div>
+
+	<div>
+		<%= form.label :Email %><br>
+		<%= form.text_field :email %>
+	</div>
+
+	<div>
+		<%= form.label :Mobile_no %><br>
+		<%= form.text_field :mobile_no %>
+	</div>
+
+	<div>
+    <%= form.submit %>
+  </div>
+<%end%>

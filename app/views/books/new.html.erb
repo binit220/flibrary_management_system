@@ -1,4 +1,4 @@
-<h2>Add new book</h2>
+<h2>Add new Book</h2>
 
 <%= form_with model: @book do |form| %>
 	<div>
@@ -31,7 +31,20 @@
 		<%= form.text_field :item_count %>
 	</div>
 
+	<%= form.select :city, [["Berlin", "BE"], ["Chicago", "CHI"], ["Madrid", "MD"]] %>
+
+
 	<div>
     <%= form.submit %>
   </div>
 <%end%>
+
+
+<%= form_with model: @book do |form| %>
+	<%= form.date_select :birth_date %>
+<%end%>
+
+<%= form_with model: @book do |form| %>
+	<%= form.file_field :picture %>
+<%end%>
+

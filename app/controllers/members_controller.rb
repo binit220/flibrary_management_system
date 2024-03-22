@@ -4,7 +4,6 @@ class MembersController < ApplicationController
   end
 
   def show
-    @members = Member.find(params[:id])
   end
 
   def new
@@ -14,9 +13,9 @@ class MembersController < ApplicationController
   def create
     @member = Member.new(member_params)
     if @member.save
-      redirect_to @member
+      redirect_to members_path
     else
-      render 'new'
+      render new
     end
   end
 
@@ -27,7 +26,7 @@ class MembersController < ApplicationController
   def update
     @member = Member.find(params[:id])
     if @member.update(member_params)
-      redirect_to @member
+      redirect_to members_path
     else
       render 'edit'
     end
@@ -42,6 +41,6 @@ class MembersController < ApplicationController
   private
 
   def member_params
-    params.require(:member).permit(:name, :email)
+    params.require(:member).permit(:name, :email, :mobile_no)
   end
 end

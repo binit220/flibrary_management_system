@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_16_203333) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_20_194700) do
   create_table "book_issues", force: :cascade do |t|
     t.integer "book_id", null: false
     t.integer "member_id", null: false
@@ -38,6 +38,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_16_203333) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "mobile_no"
   end
 
   add_foreign_key "book_issues", "books"
