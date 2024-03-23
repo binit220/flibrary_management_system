@@ -10,16 +10,24 @@
   </head>
 
   <body>
-  <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Library Management System</a>
+      </div>
+    </nav>
+
     <div class="container">
-      <a class="navbar-brand" href="#">Library Management System</a>
+      <%= yield %>
     </div>
-  </nav>
 
-  <div class="container">
-    <%= yield %>
-  </div>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    </body>
-  </html>
+    <% if current_user %>
+      Logged in as <%= current_user.email %>.
+      <%= link_to "Log Out", logout_path %>
+    <% else %>
+      <%= link_to "Sign Up", signup_path %> or
+      <%= link_to "Log In", login_path %>
+    <% end %>
+  </body>
+</html>
