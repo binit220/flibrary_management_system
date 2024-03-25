@@ -1,50 +1,79 @@
-<h2>Add new Book</h2>
+<!-- Add CSS for styling -->
+<style>
+  .form-container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
 
-<%= form_with model: @book do |form| %>
-	<div>
-		<%= form.label :name %><br>
-		<%= form.text_field :name %>
-	</div>
+  label {
+    font-weight: bold;
+  }
 
-	<div>
-		<%= form.label :Author %><br>
-		<%= form.text_field :author %>
-	</div>
+  /* Style for form input fields */
+  input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
 
-	<div>
-		<%= form.label :genr %><br>
-		<%= form.text_field :genr %>
-	</div>
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
 
-	<div>
-		<%= form.label :Isbn %><br>
-		<%= form.text_field :isbn %>
-	</div>
+  /* Hover effect for submit button */
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+</style>
 
-	<div>
-		<%= form.label :availability %><br>
-		<%= form.text_field :availability %>
-	</div>
+<div class="form-container">
+  <h2>Add New Book</h2>
+  <%= form_with model: @book do |form| %>
+    <div>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+    </div>
 
-	<div>
-		<%= form.label :count %><br>
-		<%= form.text_field :item_count %>
-	</div>
+    <div>
+      <%= form.label :Author %><br>
+      <%= form.text_field :author %>
+    </div>
 
-	<%= form.select :city, [["Berlin", "BE"], ["Chicago", "CHI"], ["Madrid", "MD"]] %>
+    <div>
+      <%= form.label :genr %><br>
+      <%= form.text_field :genr %>
+    </div>
 
+    <div>
+      <%= form.label :Isbn %><br>
+      <%= form.text_field :isbn %>
+    </div>
 
-	<div>
-    <%= form.submit %>
-  </div>
-<%end%>
+    <div>
+      <%= form.label :availability %><br>
+      <%= form.text_field :availability %>
+    </div>
 
+    <div>
+      <%= form.label :count %><br>
+      <%= form.text_field :item_count %>
+    </div>
 
-<%= form_with model: @book do |form| %>
-	<%= form.date_select :birth_date %>
-<%end%>
-
-<%= form_with model: @book do |form| %>
-	<%= form.file_field :picture %>
-<%end%>
-
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>
