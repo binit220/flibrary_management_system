@@ -1,27 +1,69 @@
-<h2>Update User</h2>
+<style>
+  .form-container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
 
-<%= form_with model: @user do |form| %>
-	<div>
-		<%= form.label :First_name %><br>
-		<%= form.text_field :first_name %>
-	</div>
+  label {
+    font-weight: bold;
+  }
 
-    <div>
-		<%= form.label :Last_name %><br>
-		<%= form.text_field :last_name %>
-	</div>
+  /* Style for form input fields */
+  input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
 
-	<div>
-		<%= form.label :Email %><br>
-		<%= form.text_field :email %>
-	</div>
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
 
-	<div>
-		<%= form.label :Mobile_no %><br>
-		<%= form.text_field :phone_number %>
-	</div>
+  /* Hover effect for submit button */
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+</style>
 
-	<div>
-    <%= form.submit %>
-  </div>
-<%end%>
+<div class="form-container">
+	<h2>Update User</h2>
+
+	<%= form_with model: @user do |form| %>
+		<div>
+				<%= form.label :First_name %><br>
+				<%= form.text_field :first_name %>
+		</div>
+
+		<div>
+				<%= form.label :Last_name %><br>
+				<%= form.text_field :last_name %>
+		</div>
+
+		<div>
+				<%= form.label :Email %><br>
+				<%= form.text_field :email %>
+		</div>
+
+		<div>
+				<%= form.label :Mobile_no %><br>
+				<%= form.text_field :phone_number %>
+		</div>
+
+		<div>
+		<%= form.submit %>
+		</div>
+  <%end%>
+</div>

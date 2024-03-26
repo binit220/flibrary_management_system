@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_22_115506) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_25_114202) do
   create_table "book_issues", force: :cascade do |t|
     t.integer "book_id", null: false
     t.integer "member_id", null: false
@@ -49,6 +49,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_22_115506) do
     t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "role"
+    t.date "date_of_birth"
   end
 
   add_foreign_key "book_issues", "books"
