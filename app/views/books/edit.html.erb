@@ -40,40 +40,42 @@
 <div class="form-container">
 	<h2>Edit book</h2>
 
-	<%= form_with model: @book do |form| %>
-		<div>
-			<%= form.label :name %><br>
-			<%= form.text_field :name %>
-		</div>
+	
+	<div>
+		<%= form.label :name %><br>
+		<%= form.text_field :name %>
+	</div>
 
-		<div>
-			<%= form.label :Author %><br>
-			<%= form.text_field :author %>
-		</div>
+	<div>
+		<%= form.label :Author %><br>
+		<%= form.text_field :author %>
+	</div>
 
-		<div>
-			<%= form.label :genr %><br>
-			<%= form.text_field :genr %>
-		</div>
+	<div>
+		<%= form.label :genr %><br>
+		<%= form.text_field :genr %>
+	</div>
 
-		<div>
-			<%= form.label :Isbn %><br>
-			<%= form.text_field :isbn %>
-		</div>
+	<div>
+		<%= form.label :Isbn %><br>
+		<%= form.text_field :isbn %>
+	</div>
 
-		<div>
-			<%= form.label :availability %><br>
-			<%= form.text_field :availability %>
-		</div>
+	<div>
+		<%= form.label :availability %><br>
+		<%= form.text_field :availability %>
+	</div>
 
-		<div>
-			<%= form.label :count %><br>
-			<%= form.text_field :item_count %>
-		</div>
+	<div>
+		<%= form.label :count %><br>
+		<%= form.text_field :item_count %>
+	</div>
 
-		<div>
-		<%= form.submit %>
-		</div>
 
-	<%end%>
+	<form action="#" method="post">
+		<div>
+				<button type="submit">Submit</button>
+		</div>
+	</form>
+
 </div>
