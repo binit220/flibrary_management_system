@@ -1,17 +1,25 @@
 class UsersController < ApplicationController
 	def index
-		@users = User.all
+		@users = User.where(role: "user")
 	end
 
-  def new
+  	def new
 		@user = User.new
 	end
+
+	def dashboard
+    # Additional logic for the dashboard action if needed
+  end
 	
 	def create
 		@user = User.new(user_params)
 		if @user.save
 			session[:user_id] = @user.id
-			redirect_to root_url, notice: "Thank you for signing up!"
+			if @user.role == "admin"
+        redirect_to admin_dashboard_path
+      else
+        redirect_to dashboard_users_path
+      end
 		else
 			render "new"
 		end
@@ -24,7 +32,11 @@ class UsersController < ApplicationController
 	def update
 		@user = User.find(params[:id])
 		if @user.update(user_params)
-			redirect_to users_path
+			if @user.role == "admin"
+				redirect_to admin_index_path
+			else
+				redirect_to users_path
+			end
 		end
 	end
 

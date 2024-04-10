@@ -9,18 +9,12 @@
 
 <h1>Welcome to Our Library</h1>
 <div style="display: inline-block;">
-  <% if current_user %>
-			<p>Explore our collection of books and manage your account.</p>
-			<%= button_to "View Books", books_path, method: :get, class:"btn-success border-0 rounded-pill shadow p-2 m-2", style: "background-color: yellow;" %>
-			<%= button_to "Show Admin list", users_path, method: :get, class:"btn-success border-0 rounded-pill shadow p-2 m-2", style: "background-color: yellow;" %>
-			<%= button_to "Show Member list", users_path, method: :get, class:"btn-success border-0 rounded-pill shadow p-2 m-2", style: "background-color: yellow;" %>
-	<% else %>
-		<div style="display: inline-block;">
-  		<%= button_to "Sign Up", signup_path, method: :get, class:"btn-success border-0 shadow p-2 m-2", style: "background-color: #87CEEB;" %>
-		</div>
-		<div style="display: inline-block;">
-  		<%= button_to "Log In", login_path, method: :get, class:"btn-success border-0 shadow p-2 m-2", style: "background-color: #FF00FF;" %>
-		</div>
-  <%end %>
+
+	<div style="display: inline-block;">
+		<%= button_to "Sign Up", signup_path, method: :get, class:"btn-success border-0 shadow p-2 m-2", style: "background-color: #87CEEB;" %>
+	</div>
+	<div style="display: inline-block;">
+		<%= button_to "Log In", login_path, method: :get, class:"btn-success border-0 shadow p-2 m-2", style: "background-color: #FF00FF;" %>
+	</div>
 </div>
 

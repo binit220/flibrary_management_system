@@ -8,39 +8,65 @@
 </head>
 
 <h1>Books</h1>
-<table>
-	<tr>
-		<th>SI no</th>
-		<th>Name</th>
-		<th>Author</th>
-		<th>Genr</th>
-		<th>ISBN</th>
-		<th>Availability</th>
-		<th>Item count</th>
-		<th>Action</th>
-	</tr>
-
-	<% @books.each_with_index do |book, index| %>
+<% if current_user.role == "admin" %>
+	<table>
 		<tr>
-			<td><%= index + 1%></td>
-			<td><%= book.name %></td>
-			<td><%= book.author %></td>
-			<td><%= book.genr %></td>
-			<td><%= book.isbn %></td>
-			<td><%= book.availability ? 'Available' : 'Not Available' %></td>
-			<td><%= book.item_count%></td>
-			<td>
-  			<div style="display: inline-block;">
-    			<%= button_to "Edit Book", edit_book_path(book), method: :get, class:"btn-success border-0 rounded-pill shadow p-2 m-2", style: "background-color: yellow;" %>
-  			</div>
-  			<div style="display: inline-block;">
-    			<%= button_to "Delete Book", book_path(book), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn-danger border-0 rounded-pill shadow p-2 m-2", style: "background-color: #FFB6C1;" %>
-  			</div>
-			</td>
+			<th>SI no</th>
+			<th>Name</th>
+			<th>Author</th>
+			<th>Genr</th>
+			<th>ISBN</th>
+			<th>Availability</th>
+			<th>Item count</th>
+			<th>Action</th>
 		</tr>
-	<% end %>
-</table>
 
-<div class="d-flex">
-    <%= button_to "Add New Book", new_book_path, method: :get, class:"btn-warning border-0 rounded-pill shadow p-4 m-4", style: "background-color: green;" %>
-</div>
+		<% @books.each_with_index do |book, index| %>
+			<tr>
+				<td><%= index + 1%></td>
+				<td><%= book.name %></td>
+				<td><%= book.author %></td>
+				<td><%= book.genr %></td>
+				<td><%= book.isbn %></td>
+				<td><%= book.availability ? 'Available' : 'Not Available' %></td>
+				<td><%= book.item_count%></td>
+				<td>
+				<div style="display: inline-block;">
+					<%= button_to "Edit Book", edit_book_path(book), method: :get, class:"btn-success border-0 rounded-pill shadow p-2 m-2", style: "background-color: yellow;" %>
+				</div>
+				<div style="display: inline-block;">
+					<%= button_to "Delete Book", book_path(book), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn-danger border-0 rounded-pill shadow p-2 m-2", style: "background-color: #FFB6C1;" %>
+				</div>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+
+	<div class="d-flex">
+			<%= button_to "Add New Book", new_book_path, method: :get, class:"btn-warning border-0 rounded-pill shadow p-4 m-4", style: "background-color: green;" %>
+	</div>
+<% else %>
+	<table>
+		<tr>
+			<th>SI no</th>
+			<th>Name</th>
+			<th>Author</th>
+			<th>Genr</th>
+			<th>ISBN</th>
+			<th>Availability</th>
+			<th>Quantity</th>
+		</tr>
+
+		<% @books.each_with_index do |book, index| %>
+			<tr>
+				<td><%= index + 1%></td>
+				<td><%= book.name %></td>
+				<td><%= book.author %></td>
+				<td><%= book.genr %></td>
+				<td><%= book.isbn %></td>
+				<td><%= book.availability ? 'Available' : 'Not Available' %></td>
+				<td><%= book.item_count%></td>
+			</tr>
+		<% end %>
+	</table>
+<% end %>

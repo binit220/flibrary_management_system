@@ -32,6 +32,16 @@
     cursor: pointer;
   }
 
+  input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
   /* Hover effect for submit button */
   input[type="submit"]:hover {
     background-color: #45a049;
@@ -61,6 +71,11 @@
 				<%= form.label :Mobile_no %><br>
 				<%= form.text_field :phone_number %>
 		</div>
+
+    <div>
+      <%= form.label :Date_of_birth %><br>
+      <%= form.date_select :date_of_birth %>
+    </div>
 
 		<div>
 		<%= form.submit %>

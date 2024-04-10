@@ -11,25 +11,29 @@
 <h1>Users Data</h1>
 <table>
   <tr>
+    <th>User Id</th>
     <th>First name</th>
     <th>Last name</th>
     <th>Email</th>
     <th>Phone number</th>
+    <th>Role</th>
     <th>Action</th>
   </tr>
   <% @users.each do |user| %>
     <tr>
+      <td><%= user.id %></td>
       <td><%= user.first_name%></td>
       <td><%= user.last_name%></td>
       <td><%= user.email %></td>
       <td><%= user.phone_number %></td>
+      <td><%= user.role %></td>
       <td>
-  			<div style="display: inline-block;">
-    			<%= button_to "Edit User", edit_user_path(user), method: :get, class:"btn-success border-0 rounded-pill shadow p-2 m-2", style: "background-color: yellow;" %>
-  			</div>
-  			<div style="display: inline-block;">
-    			<%= button_to "Delete user", user_path(user), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn-danger border-0 rounded-pill shadow p-2 m-2", style: "background-color: #FFB6C1;" %>
-  			</div>
+        <div style="display: inline-block;">
+          <%= button_to "Edit User", edit_user_path(user), method: :get, class:"btn-success border-0 rounded-pill shadow p-2 m-2", style: "background-color: yellow;" %>
+        </div>
+        <div style="display: inline-block;">
+          <%= button_to "Delete user", user_path(user), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn-danger border-0 rounded-pill shadow p-2 m-2", style: "background-color: #FFB6C1;" %>
+        </div>
 		</td>
     </tr>
   <% end %>
