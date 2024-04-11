@@ -12,9 +12,5 @@
 <div style="display: inline-block;">
   <%= button_to "View Books", books_path, method: :get, class:"btn-success border-0 rounded-pill shadow p-2 m-2", style: "background-color: yellow;" %>
 	<%= button_to "My Book", class:"btn-success border-0 rounded-pill shadow p-2 m-2", style: "background-color: yellow;" %>
-	<%= button_to "Profile", class:"btn-success border-0 rounded-pill shadow p-2 m-2", style: "background-color: yellow;" %>
+	<%= button_to "Profile", user_path(current_user), method: :get, class:"btn-success border-0 rounded-pill shadow p-2 m-2", style: "background-color: yellow;" %>
 </div>
-
-
-
-

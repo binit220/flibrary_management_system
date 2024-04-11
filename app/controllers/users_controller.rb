@@ -3,10 +3,14 @@ class UsersController < ApplicationController
 		@users = User.where(role: "user")
 	end
 
-  	def new
+  def new
 		@user = User.new
 	end
 
+	def show
+		@user = User.find(params[:id])
+	end
+	
 	def dashboard
     # Additional logic for the dashboard action if needed
   end
@@ -34,6 +38,8 @@ class UsersController < ApplicationController
 		if @user.update(user_params)
 			if @user.role == "admin"
 				redirect_to admin_index_path
+			elsif current_user == @user
+				redirect_to user_path
 			else
 				redirect_to users_path
 			end
