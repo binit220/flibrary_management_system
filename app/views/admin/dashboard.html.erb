@@ -13,6 +13,7 @@
   <%= button_to "View Books", books_path, method: :get, class:"btn-success border-0 rounded-pill shadow p-2 m-2", style: "background-color: yellow;" %>
 	<%= button_to "Show Admins list", admin_index_path, method: :get, class:"btn-success border-0 rounded-pill shadow p-2 m-2", style: "background-color: yellow;" %>
 	<%= button_to "Show Users list", users_path, method: :get, class:"btn-success border-0 rounded-pill shadow p-2 m-2", style: "background-color: yellow;" %>
-	<%= button_to "Issued Book"%>
+	<%= button_to "Issue Book", new_book_issue_path, method: :get, class:"btn-success border-0 rounded-pill shadow p-2 m-2", style: "background-color: yellow;" %>
+  <%= button_to "Issued Book", book_issues_path, method: :get, class:"btn-success border-0 rounded-pill shadow p-2 m-2", style: "background-color: yellow;" %>
 </div>
 

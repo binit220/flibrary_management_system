@@ -10,16 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_25_114202) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_03_080747) do
   create_table "book_issues", force: :cascade do |t|
-    t.integer "book_id", null: false
-    t.integer "member_id", null: false
-    t.date "issue_date"
-    t.date "return_date"
+    t.string "book_id"
+    t.string "user_id"
+    t.string "issue_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["book_id"], name: "index_book_issues_on_book_id"
-    t.index ["member_id"], name: "index_book_issues_on_member_id"
   end
 
   create_table "books", force: :cascade do |t|
@@ -53,6 +50,4 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_25_114202) do
     t.date "date_of_birth"
   end
 
-  add_foreign_key "book_issues", "books"
-  add_foreign_key "book_issues", "members"
 end

@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   resources :sessions
   resources :books
   resources :members
+  resources :book_issues
 end
 

@@ -1,0 +1,63 @@
+<style>
+  .form-container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  /* Style for form input fields */
+  input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  /* Hover effect for submit button */
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+</style>
+
+<div class="form-container">
+  <h2>Issue Book</h2>
+  <%= form_with model: @book_issue do |form| %>
+    <div>
+      <%= form.label :BOOK_ID %><br>
+      <%= form.text_field :book_id %>
+    </div>
+
+    <div>
+      <%= form.label :USER_ID %><br>
+      <%= form.text_field :user_id %>
+    </div>
+
+    <div>
+      <%= form.label :ISSUE_DATE %><br>
+      <%= form.date_field :issue_date %>
+    </div>
+
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>
